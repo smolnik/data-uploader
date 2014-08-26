@@ -2,13 +2,21 @@
 <html lang="en">
 <head>
 <title>Data import</title>
+<link rel="stylesheet" type="text/css" href="simple.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 <body>
-	<form method="POST" action="upload" enctype="multipart/form-data">
-		File: <input type="file" name="file" id="file" /> <br /> Destination
-		folder: <input type="text" value="myfolder" name="folder" /> <input
-			type="submit" value="Upload" name="upload" id="upload" />
-	</form>
+	<div class="center">
+		<div class="border" style="width: 500px">
+			<div style="margin-left: 10px">Pick out a file to upload:</div>
+			<div>
+				<form method="POST" action="upload" enctype="multipart/form-data">
+					File: <input type="file" name="file" id="file" /> <br> Destination folder: <input type="text" value="external" name="folder"
+						readonly="readonly"> <input type="submit" value="Upload" />
+				</form>
+
+			</div>
+		</div>
+	</div>
 </body>
 </html>
