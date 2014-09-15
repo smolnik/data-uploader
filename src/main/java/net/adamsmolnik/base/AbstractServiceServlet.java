@@ -29,7 +29,7 @@ public abstract class AbstractServiceServlet extends HttpServlet {
         ClientConfiguration config = new ClientConfiguration().withSocketTimeout(70 * 1000);
         s3Client = new AmazonS3Client();
         wf = new AmazonSimpleWorkflowClient(config);
-        wf.setEndpoint(conf.getServiceValue(conf.getServiceName(), "swf.endpoint"));
+        wf.setEndpoint(conf.getServiceValue("swf.endpoint"));
     }
 
 }
