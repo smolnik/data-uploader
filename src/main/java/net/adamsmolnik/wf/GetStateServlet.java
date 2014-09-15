@@ -19,7 +19,7 @@ public class GetStateServlet extends TextOutputServlet {
     @Override
     protected String getTextToBeSent(HttpServletRequest request) {
         DataProcessingWorkflowClientExternal client = new DataProcessingWorkflowClientExternalFactoryImpl(wf, conf.getServiceValue(
-                snr.getServiceName(), "swf.domain")).getClient(new WorkflowExecution().withWorkflowId(request.getParameter("workflowId")).withRunId(
+                conf.getServiceName(), "swf.domain")).getClient(new WorkflowExecution().withWorkflowId(request.getParameter("workflowId")).withRunId(
                 request.getParameter("runId")));
         String state = client.getState();
         return state == null ? "---" : state;

@@ -60,7 +60,7 @@ public class ProcessingLauncherServlet extends AbstractServiceServlet {
     }
 
     private LaunchParams launchWF(String objectKey, Set<ActionType> actionTypes) {
-        Map<String, String> confMap = conf.getServiceConfMap(snr.getServiceName());
+        Map<String, String> confMap = conf.getServiceConfMap(conf.getServiceName());
         DataProcessingWorkflowClientExternal client = new DataProcessingWorkflowClientExternalFactoryImpl(wf, confMap.get("swf.domain")).getClient();
         client.launch(conf.getGlobalValue("bucketName"), objectKey, actionTypes);
         WorkflowExecution we = client.getWorkflowExecution();
